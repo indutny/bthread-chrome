@@ -1,0 +1,43 @@
+{
+  "name": "bthread-chrome",
+  "version": "0.0.0",
+  "description": "BThread chrome application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:indutny/bthread-app"
+  },
+  "keywords": [
+    "BThread",
+    "bitcoin",
+    "messaging",
+    "thread"
+  ],
+  "author": "Fedor Indutny <fedor@indutny.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indutny/bthread-app/issues"
+  },
+  "homepage": "https://github.com/indutny/bthread-app",
+  "dependencies": {
+    "bcoin": "^0.6.0",
+    "bn.js": "^0.4.3",
+    "bthread": "^0.1.0",
+    "dns.js": "^0.1.1",
+    "inherits": "^2.0.1",
+    "level-js": "^2.1.3",
+    "levelup": "^0.18.3"
+  },
+  "devDependencies": {
+    "browserify": "^3.46.1",
+    "grunt": "^0.4.4",
+    "grunt-browserify": "^2.0.8",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "uglify-js": "^2.4.13"
+  }
+}

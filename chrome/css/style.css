@@ -1,0 +1,39 @@
+.navbar {
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar {
+  background: #f5f5f5;
+  border-right: 1px solid #eee;
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.thread-item {
+  position: relative;
+}
+
+.thread-item:first-child {
+  display: none;
+}
+
+.thread-item .thread-item-host {
+}
+
+.thread-item .thread-item-remove {
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+}
+
+.thread-item:hover .thread-item-remove {
+  display: inherit;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "BThread",
+  "description": "Bitcoin message thread",
+  "version": "0.1.0",
+  "app": {
+    "background": {
+      "scripts": [
+        "dist/bg.js"
+      ]
+    }
+  },
+  "manifest_version": 2,
+  "offline_enabled": true,
+  "author": "Fedor Indutny <fedor@indutny.com>",
+  "permissions": [
+    "storage",
+    "unlimitedStorage"
+  ],
+  "sockets": {
+    "tcp": {
+      "connect": [
+        "seed.bitcoin.sipa.be:8333",
+        "dnsseed.bluematt.me:8333",
+        "dnsseed.bitcoin.dashjr.org:8333",
+        "seed.bitcoinstats.com:8333",
+        "seed.bitnodes.io:8333",
+        "bitseed.xf2.org:8333"
+      ]
+    },
+    "udp": {
+      "bind": "0.0.0.0:",
+      "send": "8.8.8.8:53"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <link rel=stylesheet href="css/bootstrap.css">
+    <link rel=stylesheet href="css/bootstrap-theme.css">
+    <link rel=stylesheet href="css/style.css">
+  </head>
+  <body>
+    <!-- Modals -->
+    <div class="modal fade" id=modal-passphrase role=dialog>
+      <div class="modal-dialog modal-sm">
+        <div class=modal-content>
+          <div class=modal-header>
+            <h4 class=modal-title>Please enter your passphrase</h4>
+          </div>
+
+          <form role=form>
+            <div class=modal-body>
+              <p>
+                It will be used to uniquely identificate you when posting
+                messages on the thread. BThread will never store your passphrase
+                anywhere.
+              </p>
+              <input type=password
+                     class=form-control
+                     placeholder="Passphrase"
+                     required
+                     autofocus >
+              <p>
+                <i>
+                Note that recommended passphrase length is 32 symbols, though
+                any other length will be accepted as well.
+                </i>
+              </p>
+            </div>
+
+            <div class=modal-footer>
+              <button type=submit class="btn btn-primary">Start BThread</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class=navbar role=navigation>
+      <div class=container-fluid>
+        <div class=navbar-header>
+          <a class=navbar-brand href="#">BThread</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" id=thread-add>
+            <input type=text class=form-control placeholder="Enter hostname">
+            <button class="btn btn-default" type=submit>
+              <span class="glyphicon glyphicon-plus"></span> Add
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class=container-fluid>
+      <div class=row>
+        <!-- Sidebar -->
+        <div class="col-sm-4 col-md-2 sidebar">
+          <h4>Threads</h4>
+          <ul class="nav nav-sidebar" id=threads>
+            <li class=thread-item>
+              <a href="#" class="thread-item-remove">
+                <span class="glyphicon glyphicon-remove"></span>
+              </a>
+              <a href="#" class=thread-item-host>hostname</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Content -->
+        <div class="col-sm-8 col-sm-offset-4 col-md-10 col-md-offset-3 main">
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="dist/app.js"></script>
+  </body>
+</html>
