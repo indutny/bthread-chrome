@@ -29,17 +29,29 @@
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto;
+  width: 226px;
 }
+
+/* thread nav */
 
 .thread-item {
   position: relative;
+  -webkit-transition: box-shadow .2s ease-in-out;
+  transition: box-shadow .2s ease-in-out;
 }
 
 .thread-item:first-child {
   display: none;
 }
 
-.thread-item .thread-item-host {
+.thread-item.active {
+  box-shadow: inset 0 0px 3px #428bca;
+  background: #fafafa;
+}
+
+.thread-item.active a,
+.thread-item.active:hover a {
+  background: transparent;
 }
 
 .thread-item .thread-item-remove {
@@ -51,4 +63,24 @@
 
 .thread-item:hover .thread-item-remove {
   display: inherit;
+}
+
+/* post */
+
+.thread-post.hidden {
+  display: none;
+}
+
+.thread-post h1 {
+  /* Make it equal to h2 */
+  font-size: 30px;
+}
+
+.post-container {
+  position: relative;
+  top: -20px;
+  margin-left: 226px;
+  padding: 20px;
+  max-height: 548px;
+  overflow-y: scroll;
 }
