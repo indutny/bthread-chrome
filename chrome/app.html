@@ -78,20 +78,70 @@
         </div>
 
         <!-- Content -->
-        <div class="post-container">
-          <div class="thread-post panel panel-default">
+        <div class="thread-post-container">
+          <!-- Dummy post -->
+          <div class="thread-post panel panel-default hidden">
             <div class=panel-heading>
-              <h3 class=panel-title>Title</h3>
+              <div class="badge pull-right thread-post-author">
+                by someone
+              </div>
+              <h3 class="panel-title thread-post-title">
+                <a href="#">Title</a>
+              </h3>
             </div>
-            <div class=panel-body>
-              <p class=thread-post-content>
-              </p>
-              <div class=comments>
+            <div class="panel-collapse collapse in">
+              <div class=panel-body>
+                <!-- Post content -->
+                <p class=thread-post-content>
+                </p>
+
+                <!-- Reply form -->
+                <a href="#" class="pull-right thread-post-reply-toggle collapse in">
+                  Reply...
+                </a>
+                <div class=clearfix></div>
+                <form role=form class="thread-post-reply-form collapse">
+                  <hr/>
+                  <button type=button class=close>&times;</button>
+                  <div class=clearfix></div>
+
+                  <!-- Reply cost -->
+                  <div class=form-group>
+                    <div class=input-group>
+                      <span class=input-group-addon>
+                        Send to thread owner
+                      </span>
+                      <input type=text
+                             name=cost
+                             class="form-control thread-post-reply-cost"
+                             placeholder=10000>
+                      <span class=input-group-addon>Satoshi</span>
+                    </div>
+                  </div>
+
+                  <!-- Reply content -->
+                  <div class=form-group>
+                    <textarea name=content
+                              class="form-control thread-post-reply"
+                              rows=3></textarea>
+                  </div>
+
+
+                  <div class=form-group>
+                    <button type=submit class="btn btn-primary pull-right">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                      &nbsp;Post a reply
+                    </button>
+                    <div class=clearfix></div>
+                  </div>
+                </form>
+
+                <!-- Replies -->
+                <div class=thread-post-replies></div>
               </div>
             </div>
           </div>
         </div>
-        <div class=clearfix></div>
       </div>
     </div>
 

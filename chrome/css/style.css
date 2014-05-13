@@ -76,11 +76,32 @@
   font-size: 30px;
 }
 
-.post-container {
+.thread-post-replies {
+  margin-top: 20px;
+}
+
+.thread-post-replies:empty {
+  display: none;
+}
+
+.thread-post-container {
   position: relative;
   top: -20px;
   margin-left: 226px;
   padding: 20px;
   max-height: 548px;
   overflow-y: scroll;
+}
+
+.thread-post-reply-cost {
+  text-align: right;
+}
+
+.thread-post-author.owner {
+  color: #428bca;
+  background-color: #fff;
+}
+
+.thread-post-reply-form > .close {
+  margin-bottom: 8px;
 }
