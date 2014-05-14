@@ -209,3 +209,7 @@ body {
 .thread-post-form-alerts:empty {
   display: none;
 }
+
+.thread-post-form-alerts .alert button+button {
+  margin-left: 4px;
+}
