@@ -45,6 +45,47 @@
       </div>
     </div>
 
+    <!-- Post form -->
+    <form role=form class="thread-post-form collapse">
+      <hr/>
+      <button type=button class=close>&times;</button>
+      <div class=clearfix></div>
+
+      <div class=thread-post-form-alerts></div>
+
+      <!-- Reply cost -->
+      <fieldset>
+        <div class=form-group>
+          <div class=input-group>
+            <span class=input-group-addon>
+              Send to thread owner
+            </span>
+            <input type=text
+                   name=cost
+                   class="form-control thread-post-form-cost"
+                   value=10000>
+            <span class=input-group-addon>Satoshi</span>
+          </div>
+        </div>
+
+        <!-- Reply content -->
+        <div class=form-group>
+          <textarea name=content
+                    class="form-control thread-post-form-content"
+                    rows=3></textarea>
+        </div>
+
+
+        <div class=form-group>
+          <button type=submit class="btn btn-primary pull-right">
+            <span class="glyphicon glyphicon-pencil"></span>
+            &nbsp;Post a reply
+          </button>
+          <div class=clearfix></div>
+        </div>
+      </fieldset>
+    </form>
+
     <!-- Navigation -->
     <div class=navbar role=navigation>
       <div class=container-fluid>
@@ -55,6 +96,12 @@
           </a>
         </div>
         <div class="navbar-collapse collapse">
+          <div class="navbar-nav navbar-right">
+            <button type=button class="btn btn-primary navbar-btn"
+                    id="thread-post">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+          </div>
           <form class="navbar-form navbar-right" id=thread-add>
             <input type=text class=form-control placeholder="Enter hostname">
             <button class="btn btn-default" type=submit>
@@ -109,45 +156,8 @@
                   Reply...
                 </a>
                 <div class=clearfix></div>
-                <form role=form class="thread-post-reply-form collapse">
-                  <hr/>
-                  <button type=button class=close>&times;</button>
-                  <div class=clearfix></div>
-
-                  <div class=thread-post-reply-alerts></div>
-
-                  <!-- Reply cost -->
-                  <fieldset>
-                    <div class=form-group>
-                      <div class=input-group>
-                        <span class=input-group-addon>
-                          Send to thread owner
-                        </span>
-                        <input type=text
-                               name=cost
-                               class="form-control thread-post-reply-cost"
-                               value=10000>
-                        <span class=input-group-addon>Satoshi</span>
-                      </div>
-                    </div>
-
-                    <!-- Reply content -->
-                    <div class=form-group>
-                      <textarea name=content
-                                class="form-control thread-post-reply"
-                                rows=3></textarea>
-                    </div>
-
-
-                    <div class=form-group>
-                      <button type=submit class="btn btn-primary pull-right">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                        &nbsp;Post a reply
-                      </button>
-                      <div class=clearfix></div>
-                    </div>
-                  </fieldset>
-                </form>
+                <div class=thread-post-form-container>
+                </div>
 
                 <!-- Replies -->
                 <div class=thread-post-replies></div>
@@ -158,6 +168,7 @@
       </div>
     </div>
 
+    <!-- scripts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="dist/app.js"></script>

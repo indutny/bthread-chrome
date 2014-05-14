@@ -21,6 +21,10 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+#thread-post {
+  margin-left: 4px;
+}
+
 /* thread nav */
 
 .sidebar {
@@ -110,23 +114,23 @@ body {
   overflow-y: scroll;
 }
 
-.thread-post-reply-cost {
-  text-align: right;
-}
-
 .thread-post-author.owner {
   color: #428bca;
   background-color: #fff;
 }
 
-.thread-post-reply-form > .close {
+.thread-post-form-cost {
+  text-align: right;
+}
+
+.thread-post-form > .close {
   margin-bottom: 8px;
 }
 
-.thread-post-reply-alerts {
+.thread-post-form-alerts {
   margin-bottom: 20px;
 }
 
-.thread-post-reply-alerts:empty {
+.thread-post-form-alerts:empty {
   display: none;
 }
