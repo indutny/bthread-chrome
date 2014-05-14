@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     watch: {
       files: [ 'lib/**/*.js' ],
-      tasks: [ 'browserify' ]
+      tasks: [ 'browserify', 'uglify' ]
     },
     browserify: {
       bg: {
@@ -36,5 +36,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', [ 'watch', 'browserify', 'uglify' ]);
+  grunt.registerTask('default', [ 'watch', 'browserify' ]);
+  grunt.registerTask('build', [ 'browserify' ]);
 };

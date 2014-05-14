@@ -73,6 +73,33 @@ body {
   background: #fafafa;
 }
 
+/* thread-item.loader */
+@-webkit-keyframes thread-item-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.thread-item.thread-item-loading::before {
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  content: '\e031';
+  position: absolute;
+  z-index: 1001;
+  top: 10px;
+  left: 12px;
+  -webkit-animation: thread-item-loader 1.2s linear infinite;
+}
+
 .thread-item .thread-item-owner {
   font-size: 10px;
   line-height: 20px;
