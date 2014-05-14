@@ -3,3 +3,4 @@ node_modules/
 npm-debug.log
 chrome.pem
 chrome.crx
+*.zip
