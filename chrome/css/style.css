@@ -91,6 +91,53 @@ body {
   visibility: inherit;
 }
 
+/* view */
+
+/* view.loader */
+@-webkit-keyframes view-loader {
+  0% {
+    margin-left: -64px;
+    border-width: 0px;
+    border-radius: 0px;
+  }
+  50% {
+    margin-top: -20px;
+    margin-left: -10px;
+    border-width: 20px;
+    border-radius: 20px;
+  }
+  100% {
+    margin-left: 64px;
+    border-width: 0px;
+    border-radius: 0px;
+  }
+}
+
+.thread-view:empty::before,
+.thread-view:empty,
+.thread-view:empty::after {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  content: '';
+  border: 10px solid #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px #fefefe;
+  -webkit-animation: view-loader 1.2s linear infinite;
+}
+
+.thread-view:empty:before {
+  -webkit-animation-delay: -0.8s;
+}
+
+.thread-view:empty {
+  -webkit-animation-delay: -0.4s;
+}
+
+.thread-view:empty::after {
+  -webkit-animation-delay: 0s;
+}
+
 /* post */
 
 .thread-post h1 {
