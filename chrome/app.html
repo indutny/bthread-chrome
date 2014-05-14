@@ -49,7 +49,10 @@
     <div class=navbar role=navigation>
       <div class=container-fluid>
         <div class=navbar-header>
-          <a class=navbar-brand href="#">BThread</a>
+          <a class=navbar-brand href="#">
+            BThread
+            &nbsp;<span class=thread-title-host></span>
+          </a>
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" id=thread-add>
@@ -69,12 +72,18 @@
           <h4>Threads</h4>
           <ul class="nav nav-sidebar" id=threads>
             <li class=thread-item>
-              <a href="#" class="thread-item-remove">
+              <a href="#" class=thread-item-remove>
                 <span class="glyphicon glyphicon-remove"></span>
+              </a>
+              <a href="#" class="thread-item-owner pull-left invisible">
+                <span class="glyphicon glyphicon-home"></span>
               </a>
               <a href="#" class=thread-item-host>hostname</a>
             </li>
           </ul>
+          <div class=sidebar-chevron>
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </div>
         </div>
 
         <!-- Content -->
@@ -105,35 +114,39 @@
                   <button type=button class=close>&times;</button>
                   <div class=clearfix></div>
 
+                  <div class=thread-post-reply-alerts></div>
+
                   <!-- Reply cost -->
-                  <div class=form-group>
-                    <div class=input-group>
-                      <span class=input-group-addon>
-                        Send to thread owner
-                      </span>
-                      <input type=text
-                             name=cost
-                             class="form-control thread-post-reply-cost"
-                             placeholder=10000>
-                      <span class=input-group-addon>Satoshi</span>
+                  <fieldset>
+                    <div class=form-group>
+                      <div class=input-group>
+                        <span class=input-group-addon>
+                          Send to thread owner
+                        </span>
+                        <input type=text
+                               name=cost
+                               class="form-control thread-post-reply-cost"
+                               value=10000>
+                        <span class=input-group-addon>Satoshi</span>
+                      </div>
                     </div>
-                  </div>
 
-                  <!-- Reply content -->
-                  <div class=form-group>
-                    <textarea name=content
-                              class="form-control thread-post-reply"
-                              rows=3></textarea>
-                  </div>
+                    <!-- Reply content -->
+                    <div class=form-group>
+                      <textarea name=content
+                                class="form-control thread-post-reply"
+                                rows=3></textarea>
+                    </div>
 
 
-                  <div class=form-group>
-                    <button type=submit class="btn btn-primary pull-right">
-                      <span class="glyphicon glyphicon-pencil"></span>
-                      &nbsp;Post a reply
-                    </button>
-                    <div class=clearfix></div>
-                  </div>
+                    <div class=form-group>
+                      <button type=submit class="btn btn-primary pull-right">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        &nbsp;Post a reply
+                      </button>
+                      <div class=clearfix></div>
+                    </div>
+                  </fieldset>
                 </form>
 
                 <!-- Replies -->

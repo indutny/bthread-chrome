@@ -1,3 +1,7 @@
+body {
+  -webkit-user-select: text;
+}
+
 .progress-stripe {
   position: fixed;
   top: -1px;
@@ -17,22 +21,37 @@
   border-bottom: 1px solid #eee;
 }
 
+/* thread nav */
+
 .sidebar {
   background: #f5f5f5;
   border-right: 1px solid #eee;
   position: fixed;
   top: 51px;
   bottom: 0;
-  left: 0;
+  left: -310px;
   z-index: 1000;
   display: block;
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto;
-  width: 226px;
+  width: 320px;
+  -webkit-transition: left .2s ease-in-out;
+  transition: left .2s ease-in-out;
 }
 
-/* thread nav */
+.sidebar:hover {
+  /* Slide out of the edge */
+  left: 0px;
+}
+
+.sidebar .sidebar-chevron {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 10px;
+  margin-top: -5px;
+}
 
 .thread-item {
   position: relative;
@@ -49,27 +68,24 @@
   background: #fafafa;
 }
 
-.thread-item.active a,
-.thread-item.active:hover a {
-  background: transparent;
+.thread-item .thread-item-owner {
+  font-size: 10px;
+  line-height: 20px;
+  padding-right: 10px;
 }
 
 .thread-item .thread-item-remove {
-  display: none;
+  visibility: hidden;
   position: absolute;
   right: 0;
   z-index: 1000;
 }
 
 .thread-item:hover .thread-item-remove {
-  display: inherit;
+  visibility: inherit;
 }
 
 /* post */
-
-.thread-post.hidden {
-  display: none;
-}
 
 .thread-post h1 {
   /* Make it equal to h2 */
@@ -87,7 +103,7 @@
 .thread-post-container {
   position: relative;
   top: -20px;
-  margin-left: 226px;
+  margin-left: 32px;
   padding: 20px;
   max-height: 548px;
   overflow-y: scroll;
@@ -104,4 +120,12 @@
 
 .thread-post-reply-form > .close {
   margin-bottom: 8px;
+}
+
+.thread-post-reply-alerts {
+  margin-bottom: 20px;
+}
+
+.thread-post-reply-alerts:empty {
+  display: none;
 }
