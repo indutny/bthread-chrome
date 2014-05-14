@@ -44,6 +44,7 @@ body {
   transition: left .2s ease-in-out;
 }
 
+.sidebar.thread-sidebar-open,
 .sidebar:hover {
   /* Slide out of the edge */
   left: 0px;
