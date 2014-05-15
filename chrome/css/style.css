@@ -2,7 +2,7 @@ body {
   -webkit-user-select: text;
 }
 
-.progress-stripe {
+#progress-stripe {
   position: fixed;
   top: -1px;
   height: 1px;
@@ -13,6 +13,11 @@ body {
   width: 0%;
   opacity: 1;
 
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+#modal-passphrase .progress-bar {
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }

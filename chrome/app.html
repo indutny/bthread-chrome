@@ -7,39 +7,62 @@
     <link rel=stylesheet href="css/style.css">
   </head>
   <body>
-    <div class=progress-stripe></div>
+    <div id=progress-stripe></div>
 
     <!-- Modals -->
     <div class="modal fade" id=modal-passphrase role=dialog>
       <div class="modal-dialog modal-sm">
         <div class=modal-content>
           <div class=modal-header>
-            <h4 class=modal-title>Please enter your passphrase</h4>
+            <button type=button
+                    class=close
+                    data-dismiss=modal
+                    aria-hidden=true>
+              &times;
+            </button>
+            <h4 class=modal-title>New wallet</h4>
           </div>
 
           <form role=form>
-            <div class=modal-body>
-              <p>
-                It will be used to uniquely identificate you when posting
-                messages on the thread. BThread will never store your passphrase
-                anywhere.
-              </p>
-              <input type=password
-                     class=form-control
-                     placeholder="Passphrase"
-                     required
-                     autofocus >
-              <p>
-                <i>
-                Note that recommended passphrase length is 32 symbols, though
-                any other length will be accepted as well.
-                </i>
-              </p>
-            </div>
+            <fieldset>
+              <div class=modal-body>
+                <p>
+                  It will be used to uniquely identificate you when posting
+                  messages on the thread. BThread will never store your
+                  passphrase anywhere.
+                </p>
+                <input type=text
+                       name=name
+                       class=form-control
+                       placeholder="Wallet name"
+                       required>
+                <input type=password
+                       name=passphrase
+                       class=form-control
+                       placeholder="Passphrase"
+                       required>
+                <p>
+                  <i>
+                  Note that recommended passphrase length is 32 symbols, though
+                  any other length will be accepted as well.
+                  </i>
+                </p>
 
-            <div class=modal-footer>
-              <button type=submit class="btn btn-primary">Start BThread</button>
-            </div>
+                <div class="progress progress-striped active invisible">
+                  <div class="progress-bar"
+                       role=progressbar
+                       style="width: 0%">
+                  </div>
+                </div>
+              </div>
+
+              <div class=modal-footer>
+                <button type=button class="btn btn-default" data-dismiss=modal>
+                  Close
+                </button>
+                <button type=submit class="btn btn-primary">Create</button>
+              </div>
+            </fieldset>
           </form>
         </div>
       </div>
@@ -55,6 +78,21 @@
 
       <!-- Reply cost -->
       <fieldset>
+        <!-- Wallet -->
+        <div class=form-group>
+          <div class=input-group>
+            <span class=input-group-addon>
+              Wallet
+            </span>
+            <select name=wallet
+                    class="form-control thread-post-form-wallet"
+                    value="">
+              <option value="" disabled selected>Please select a wallet</option>
+              <option value=new>New...</option>
+            </select>
+          </div>
+        </div>
+        <!-- Post cost -->
         <div class=form-group>
           <div class=input-group>
             <span class=input-group-addon>
@@ -98,13 +136,16 @@
         <div class="navbar-collapse collapse">
           <div class="navbar-nav navbar-right">
             <button type=button class="btn btn-primary navbar-btn"
+                    title="Create new post"
                     id="thread-post">
               <span class="glyphicon glyphicon-pencil"></span>
             </button>
           </div>
           <form class="navbar-form navbar-right" id=thread-add>
             <input type=text class=form-control placeholder="Enter hostname">
-            <button class="btn btn-default" type=submit>
+            <button class="btn btn-default"
+                    title="Add new thread"
+                    type=submit>
               <span class="glyphicon glyphicon-plus"></span> Add
             </button>
           </form>
