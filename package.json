@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/indutny/bthread-app",
   "dependencies": {
-    "bcoin": "^0.12.0",
-    "bn.js": "^0.7.0",
-    "bthread": "^0.4.0",
+    "bcoin": "^0.13.0",
+    "bn.js": "^0.10.0",
+    "bthread": "^0.5.0",
     "dns.js": "^0.1.1",
     "inherits": "^2.0.1",
     "level-js": "^2.1.3",
